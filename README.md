@@ -23,6 +23,12 @@ Capítulo | Título
 
 _Sobre las criptomonedas: una aproximación al dinero del siglo XXI_ por Federico Zabatta se distribuye bajo una Licencia [Creative Commons Atribución 4.0 Internacional](https://creativecommons.org/licenses/by/4.0/deed.es).
 
+## Donación
+
+Si te ha gustado este trabajo y quieres realizar una donación, puedes hacerlo a esta dirección de Monero:
+
+8BBdgnAckd2DWfXqHcc2466v19dVeWvhgAtjSm1hZGPxe6CBkPgDxqaBLbrD9NLK8reWLFfoUtdpg18rzkTDC2iBJMerKDv
+
 ## Hashes
 
 Archivo | SHA-256
