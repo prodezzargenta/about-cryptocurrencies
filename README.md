@@ -27,6 +27,8 @@ _Sobre las criptomonedas: una aproximación al dinero del siglo XXI_ por Federic
 
 Si te ha gustado este trabajo y quieres realizar una donación, puedes hacerlo a esta dirección de Monero:
 
+![address](/img/address.png)
+
 8BBdgnAckd2DWfXqHcc2466v19dVeWvhgAtjSm1hZGPxe6CBkPgDxqaBLbrD9NLK8reWLFfoUtdpg18rzkTDC2iBJMerKDv
 
 ## Hashes
