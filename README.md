@@ -35,8 +35,6 @@ Si te ha gustado este trabajo y quieres realizar una donación, puedes hacerlo a
 
 Archivo | SHA-256
 --- | --- 
-sobre-las-criptomonedas.tex | 5a3daa41e789d6f7e984d3542127e4f18e8bdd5681f85bd639206e30ecb7ceda
-sobre-las-criptomonedas.pdf | 31b82e7ce5bbf0b993a114b3f4849d61c3203cffa33f977336a6bc70ad6f817e
 biblio.bib | efe70af738c0e55a5c9449648994a1757ab609c63280baf18e5abbd950f8eee7
 tables/cotizacion-alto-guiso.tex | 6942ec7fe1dbe112157a955f216d7db580087b854e3675c17394292a4de2fdb2
 tables/cotizacion-btc.tex | c6c94404023a132435f3dd8fc03a3bc9451bc8e31e819529e63d661aa2debd45
