@@ -25,11 +25,21 @@ _Sobre las criptomonedas: una aproximación al dinero del siglo XXI_ por Federic
 
 ## Donación
 
-Si te ha gustado este trabajo y quieres realizar una donación, puedes hacerlo a esta dirección de Monero:
+Si te ha gustado este trabajo y quieres realizar una donación, puedes hacerlo a estas direcciones:
 
-![address](/img/address.png)
+Cripto | Dirección
+--- | --- 
+Monero | 8BBdgnAckd2DWfXqHcc2466v19dVeWvhgAtjSm1hZGPxe6CBkPgDxqaBLbrD9NLK8reWLFfoUtdpg18rzkTDC2iBJMerKDv
+BCH | qz6jqjq8ej2ufrmfj8yvdesd6u5xvtpvz5feyq5hst
+BTC | 1HWhyfsNXcbFoqHspHLSQv3hpUuu2WR2Bn
 
-8BBdgnAckd2DWfXqHcc2466v19dVeWvhgAtjSm1hZGPxe6CBkPgDxqaBLbrD9NLK8reWLFfoUtdpg18rzkTDC2iBJMerKDv
+O, en su versión en código QR:
+
+Cripto | Dirección
+--- | --- 
+Monero | ![address](/img/address.png)
+BCH | ![address](/img/bch-address.png)
+BTC | ![address](/img/btc-address.png)
 
 ## Hashes
 
