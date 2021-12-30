@@ -1,0 +1,377 @@
+\documentclass[12pt,a4paper,twoside]{book}
+\let\tmp\oddsidemargin
+\let\oddsidemargin\evensidemargin
+\let\evensidemargin\tmp
+\reversemarginpar
+\usepackage[utf8]{inputenc}
+\usepackage[english,activeacute]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{longtable}
+\usepackage{makeidx}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{tabulary}
+\usepackage{listings}
+\newcolumntype{K}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage[bibnewpage,nosectionbib]{apacite}
+\author{Federico Zabatta}
+\date{2021}
+\title{\huge About cryptocurrencies: \\
+	\large An approximation to the 21st-century currency \\}
+\begin{document}
+\setcounter{secnumdepth}{-1}
+\pagenumbering{roman}
+
+\maketitle
+\newpage
+
+\thispagestyle{empty}
+\ % Something
+\newpage
+
+\ % Space
+
+\vspace{12cm}
+
+\includegraphics[scale=1]{img/licencia.png}
+
+\vspace{0.5cm}
+
+\textit{About cryptocurrencies: An approximation to the 21st-century currency} by Federico Zabatta is licensed under a Creative Commons Attribution 4.0 International License.
+
+https://creativecommons.org/licenses/by/4.0/deed.en
+
+\newpage
+
+\tableofcontents
+
+\chapter{Preface}
+This investigation was written with the intention of giving answers towards the world of cryptocurrencies and economy in general, through the search of concepts that could be easily to explain.
+
+The main hypothesis that gave birth to this work is: \textit{Could cryptocurrencies be used as a medium of exchange in replacement of the State currency?}. This could seems obvious for anyone who's already into the world of \textit{cryptos}, or has already investigated on their own; but here lies two knowledge spheres that are not so "popular": the economy and computation (and a little bit of Argentina's economic history). On the other hand, my observation about this subject in which the explanation given, usually in social media like Twitter, Instagram or Facebook (even YouTube), tends to be confusing: wether is because of the platform's limitation, or the assumption of having a previous knowledge about certain subjects. This makes the information not to be so efficiently understood, and the results being worse.
+
+Although in the next pages, unfailingly it will have to mention technical subjects (such as the economy or information systems), I'll try to use "daily life" analogies with the intention of avoiding, once it for all, the confusion of what I see in those who talks about cryptocurrencies. In this manner, this work of investigation will be divided in: \textit{the concept of money}, to define what is money; \textit{the Argentine case} and a brief history of money in Argentina; \textit{the technical aspects of cryptocurrencies}, to know, basically, how it works; and maybe the most controversial of all, \textit{a proposal to implement cryptocurrencies in the actual economy}.
+
+\newpage
+
+\setcounter{secnumdepth}{1}
+\thispagestyle{empty}
+\
+\renewcommand{\thepage}{\arabic{page}}
+\part{About money}
+\chapter{Introduction}
+\section{¿What is money?}
+Money is \textit{some-thing} that is used in the daily life to exchange \textit{objects} like food, drinks, tools, cloths; or \textit{services} like electricity, transport, or even hair-dressing, football courts, etcetera. But, what really is money? What is its definition? What characteristics have?
+
+In the next dictionaries and encyclopedias, it describes the definition of \textit{money}:
+
+\begin{itemize}
+\item "Any commodity accepted as instrument of exchange or measure of value." \cite[p. 3807]{dic:espasacalpe}
+\item "Instrumental good that serves as a traffic mediator, avoiding the great difficulties of direct exchange." \cite{dic:clarin}
+\item "Medium of exchange or payment generally accepted." \cite{rae}
+\item "Any asset or good that is generally accepted as a medium of collection and payment for doing transactions." \cite{epedia:dinero}
+\end{itemize}
+
+It's worth clarifying that, in economy, the word \textit{good} means:
+
+\begin{itemize}
+\item "Object or lending that satisfies a human necessity. It's synonym of wealth and use of value." \cite[p. 1687]{dic:espasacalpe}
+\item "Every one of the material medium, movable or unmovable or immaterial means that can satisfy a human necessity and exists in limited quantity." \cite{dic:clarin}
+\item "Everything that is suitable to satisfy, directly or indirectly, a human necessity." \cite{rae}
+\item "It's a tangible element or material destined to satisfy any necessity of the public." \cite{epedia:bien}
+\end{itemize}
+
+There are other sources of information to read about the definition and the characteristics of money. For example, in the book \textit{The Ascent of Money}, Niall Ferguson describes \textit{money} as:
+
+\begin{quotation}
+A medium of exchange, which has the advantage of eliminating inefficiencies of barter; a unit of account, which facilitates valuation and calculation; and a store of value, which allows economic transactions to be con­ ducted over long periods as well as geographical distances. To perform all these functions optimally, money has to be available, affordable, durable, fungible, portable and reliable. \cite[pp. 23-24]{ferguson:ascent-money}
+\end{quotation}
+
+So far, the definitions leads towards the idea of money as a \textit{medium of exchange}. It can be cited, for example, the Austrian economist Ludwig von Mises and his book \textit{The Human Action}, in which he defines the medium of exchange as:
+
+\begin{quotation}
+A good which people acquire neither for their own consumption nor for employment in their own production activities, but with the intention of exchanging it at a later date against those goods which they want to use either for consumption or for production. [...] All the other functions which people ascribe to money are merely particular aspects of its primary and sole function, that of a medium of exchange. \cite[pág. 398]{mises:ha}
+\end{quotation}
+
+Therefore, money is a good: an object that can be physical or immaterial; but, above all, is a good that is \textit{accepted} by the people as a medium of exchange trade ir for other goods and services. It has the characteristic of being: an \textit{account unit} (it can be easily used for counting); a \textit{scarce} good; it must be \textit{easily available} or, in other words, be accessible for people without any kind of problems, and also be easily interchangeable; a \textit{lasting} good (something in which must remain integral during a long period of time); and the most important, to be a medium of exchange that people could \textit{trust} it.
+
+\section{A little bit of history...}
+From an innocent point of view, one can assume the idea that money, by having icons of people considered "heroes of the fatherland" or fellow countrymen in which they are from the nationality's bill, are, thus, a creation of the State. It would simply require to pick up a bill and observe the printing (without considering the security seals).
+
+In the case of Argentina, the one hundred \textit{pesos argentinos} bill it can be read, in the obverse, literally: "BANCO CENTRAL DE LA REPÚBLICA ARGENTINA" (Argentine Republic Central Bank). Just by looking at it, it can be seen the face of General Julio Argentino Roca, a former president of Argentina between 1880-1886 and 1898-1904. In the reverse, the bill contains an illustration of the battle called "Conquest of the Desert", referencing the historical event happened in the patagonic region of the country, starting in the year 1878.
+
+In other bills like, for example, the Euro, it has the acronym "BCE" that means "Banco Central Europeo"\footnote{\textit{European Central Bank}, or EBC.} ("BCE" is the acronym in spanish; but in the obverse of the bill, in the left, there are translations in different languages about how is named the European Central Bank). In the Bolívar bill, the official currency of Venezuela, just as the Argentine bill, it has the text: "BANCO CENTRAL DE VENEZUELA" (Venezuela Central Bank). The Peso Uruguayo has the same characteristic: "BANCO CENTRAL DEL URUGUAY" (Uruguay Centra Bank). And not only that: most of the bills contains historical figures of the nation in which they belong.
+
+Here it can be seen another data: the money which its used in the territory of their respective countries, in order to buy and sell goods and services, it has the seal of an entity, administrated by the State, called "Central Bank". Therefore, the premise of the State as the administrator of money seems to be \textit{true}. However, if money is administrated by the State, then the money, historically speaking, exists since the creation of the State? No. Money exist since way before the creation of the State; and certainly, since a lot before than the so called Central Bank.
+
+The economist Carl Menger, in an article called \textit{On the Origins of Money}, he mentions about this idea of assuming the money as a creation of the State:
+
+\begin{quotation}
+To assume that certain commodities, the precious metals in particular, had been exalted into the medium of exchange by general convention or law, in the interest of commonweal, solved the difficulty, and solved it apparently the more easily and naturally inasmuch as the shape of the coins seemed to be a token of state regulation. such in fact is the opinion of Plato, Aristotle, and the roman jurists, closely followed by the mediaeval writers.  \cite[p. 16]{menger:origins}
+\end{quotation}
+
+A question one might ask would be: Did the economy even exist before the creation of the State? In order to answer to this, one must go back to the history of the first human civilizations, before the creation of the State.
+
+\subsection{The origin of the economy}
+The American archaeologist Kris Hirst, in an article published in the \textit{ThoughtCo.} portal, says about it:
+
+\begin{quotation}
+Settling down, picking a place, and living in it permanently for at least part of the year is partially but not entirely related to how a group obtains necessary resources. This includes gathering and growing food, stone for tools, and wood for housing and fires.
+
+Some of the traditional features of sedentism are residential areas where houses were built close to one another, large-scale food storage and cemeteries, permanent architecture, increased population levels, non-transportable toolkits [...]. But all of these features are related to the development of prestige economies, rather than sedentism. \cite{krishirst}
+\end{quotation}
+
+Since there's no detailed records done by the same settlers, here it will analyze an hypothetical case based around possible questions about it. Given a tribe, around the year 10.000 B.C., that produces food and other goods, what can the settlers do with the goods that aren't consumed \textit{immediately} and accumulates? The fabricated goods will be consumed through time; but, for example, with the food it will rot in the short run (whether being by the primitive way of storing it, as also the animals wandering in the zone and even the microorganisms).
+
+Another issue: what would happen if it would need a good that can't be no longer available in the established location? For example, in the geographic zone in which the tribe is located, the inhabitants could enjoy of the provision of wild boar meat; but, due to different reasons, now there's no wild boar in the zone. This translates into a more waste of resources (because of hunters that will need to do a longer distance) as also a higher risk of hunting them (a long distance represents a higher probability of encounter wild animals and insects that could attack them).
+
+The solution to these questions could be two: the first, and the most \textit{expensive} for the survival of the tribe, would be to relocate to another geographic location. The second option, and the most beneficial of all, would be exchanging with other tribes. In fact, if the tribe can find other tribes that offers whatever they need, and viceversa, both tribes could benefit from each other.
+
+Menger writes about this subject and says about it:
+
+\begin{quotation}
+In primitive traffic the economic man is awaking but very gradually to an understanding of the economic advantages to be gained by exploitation of existing opportunities of exchange. [...] Under such conditions each man is intent to get by way of exchange just such goods as he directly needs, and to reject those of which he has no need at all, or with which he is already sufficiently provided. \cite[p. 19]{menger:origins}
+\end{quotation}
+
+In conclusion, to the need of acquiring good that can no longer be obtained in a location, the best solution would be to exchange goods. This will avoid the higher waste of resources to relocate; and this could take the advantages of local production to be exchanged for other goods with other tribes. In this stage of economy, the ideal could be doing \textit{direct} exchanges among people. This is commonly known as \textit{barter}: just simply exchange one good for another.
+
+\subsection{Barter}
+To demonstrate a barter-based economy, or by \textit{direct} exchange, in modern terms, this could be done by exemplify an hypothetical situation in which there is two people: a baker called Anna; and a glass-bottle maker called John.
+
+In this barter-based economy, the exchange of goods between both persons could be \textit{only} made if both Anna and John desires the same thing, this means: Anna would need to acquire a glass bottle and be willing to trade it for a chocolate cake; and John would need to acquire a chocolate cake and be willing to trade it for a glass bottle. If such case exists, in which both matches their own preferences, the exchange could be done without any problem: Anna will give her chocolate cake for a glass bottle; and John will give his glass bottle for a chocolate cake.
+
+What would happen if Anna would need a glass bottle, but John doesn't want to exchange his glass bottle, or he's no longer interested in acquiring a chocolate cake (or maybe he doesn't need it)? In this situation, Anna would have to find other person, this means, another glass-bottle maker that do want to exchange it for a chocolate cake; and, also, be willing to trade it for a single glass bottle.
+
+Another example of direct exchange (outside the example of Anna and John) is about the interaction of kids in elementary school, when they collect cards (being collectible cards of soccer players during the World Cup, or fiction characters of any anime or cartoon show). Although the kids acquire their cards thanks to their respective parents who buys those cards in kiosk, the kids in the school exchange those cards who already have in possession and don't need anymore for other cards that they don't have and do want. Instead of keep asking their parents to buy them more cards until they acquire the card they've been looking for, it will be more beneficial for both parents and the kid than the children take the most quantity of cards to the school in order to exchange them with other kids (otherwise, the parents will have to randomly buy multiple packs of cards, which would represent a higher expense). However, if the kids decides to exchange the cards with other kids, they will have to search in their school:
+
+\begin{enumerate}
+\item a kid that collects their same cards;
+\item that needs to obtain new cards;
+\item that is willing to exchange his/her cards;
+\item that have cards that no longer needs;
+\item that both match in what they need.
+\end{enumerate}
+
+This example illustrates, also, the \textit{great} problem or barter: this is what is known as the \textit{double coincidence of goods}. Menger says about it:
+
+\begin{quotation}
+Think [...] of the peculiar difficulties obstructing the immediate barter of goods [...], where supply and demand do not quantitatively coincide; where, e.g., an indivisible commodity\footnote{By \textit{indivisible commodity} means any good that cannot be fractioned, but it must be exchanged as a \textit{whole}.} is to be exchanged for a variety of goods in the possession of different person, or indeed for such commodities as are only in demand at different times and can be supplied only by different persons! \cite[p. 20]{menger:origins}
+\end{quotation}
+
+With this idea, Menger proves that it would be impossible to exchange, for example, half of a living cow for a bench saw and the other half of the living cow in six suits for men, to two different persons at the same time. This, obviously, is an absurd.
+
+Finally, the author concludes in:
+
+\begin{quotation}
+These difficulties would have proved absolutely insurmountable obstacles to the progress of traffic, and at the same time to the production of goods not commanding a regular sale, had there not lain a remedy in the very nature of things. \cite[p. 20]{menger:origins}
+\end{quotation}
+
+To summarize, barter suffers the following drawbacks: the \textit{double coincidence}, this means the coincidence of the preference of both persons involved in a transaction; the \textit{availability} of goods among the two persons in the moment of doing the exchange; and the \textit{indivisibility} of goods.
+
+\subsection{Indirect exchange}
+Having established what is barter or the \textit{direct} exchange, why the money do work as an \textit{indirect} exchange? Because money, being whatever its shape (paper or metal) avoids the double coincidence and the indivisibility of certain goods. This means that, returning into the example of the baker and the glass-bottle maker, Anna would not need to exchange a chocolate cake for a glass bottle at the very moment she need to carry out such transaction. With money, a good of exchange, she would exchange, first, her chocolate cake for money in order to be exchanged to a glass bottle in the future. That's why it said that is an \textit{indirect} exchange: because it uses, as a medium of exchange, an "intermediary" good to acquire a good or service.
+
+Back to the premise of the creation of money by the State, and the example of the tribe: supposing that, besides the already mentioned problems of barter, the tribe is completely convinced that barter \textit{is} the only system that works, that makes barters in the most efficient way, and there would not be any form of exchanging goods and services other than barter. In a few word, every member of the tribe exchange goods through barter, and everyone is convinced that is the \textit{only} way to trade. What would happen if, suddenly, the leader of the tribe (who has never worked as a trader, but in the administration of the tribe's resources) impose to the rest of the members that, now, everyone must use gold nuggets as a good of \textit{direct} interchange; and everyone who will not obey, it will be exiled from the tribe? Certainly, in the description of this hypothetical case, the settlers would find in a state of confusion, because they now have to adopt a new kind of system that they don't know; and also, they must use this "strange" system by the force, or they'll be exiled.
+
+The strangest of all is to pretend to know how can the leader of the tribe, who has never worked as a trader, suddenly obtain a radically different solution for the traders who dedicates day to day to exchange goods. This conclusion comes because people who produce and trade their goods are the most interested in finding the best possible way to trade, in such manner that they could benefit in the longest time possible. And if they are the most interested of all, how can be possible that a person outside to the commerce could think the "brilliant" idea of abandoning barter and use money?
+
+The same "trading practice", by "trial and error" will lead to the same traders to find the best possible solution. In the other hand, also rises the next question: how can the new economic system (the adoption of money) be implemented in such a way that convince people to adopt a system completely unknown?
+
+About the idea of creation of money by the State, von Mises writes about:
+
+\begin{quotation}
+There were authors who tried to explain the origin of money by decree or covenant. The authority, the state, or a compact between citizens has purposely and consciously established indirect exchange and money. The main deficiency of this doctrine is not to be seen in the assumption that people of an age unfamiliar with indirect exchange and money could design a plan of a new economic order, entirely different from the real conditions of their own age, and could comprehend the importance of such a plan. Neither is it to be seen in the fact that history does not afford a clue for the support of such statements. There are more substantial reasons for rejecting it.
+
+If it is assumed that the conditions of the parties concerned are improved by every step that leads from direct exchange to indirect exchange [...] it is difficult to conceive why one should, in dealing with the origin of indirect exchange, resort in addition to authoritarian decree or an explicit compact between citizens. [...] Under these circumstances there was no need of government interference or of a compact between the citizens. [...] It is certainly more plausible to take for granted that the immediate advantages conferred by indirect exchange were recognized by the acting parties than to assume that the whole image of a society trading by means of money was conceived by a genius and, if we adopt the covenant doctrine, made obvious to the rest of the people by persuasion. \cite[pp. 402-403]{mises:ha}
+\end{quotation}
+
+To summarize, money, the good of exchange, solves the problems of the double coincidence, availability and indivisibility that the bartering system has. And this creation could only be originated by the same traders, in their search of the best way possible of trading for their own benefit. But taking for granted that the State was the creator of money, and not the same traders, leads to a series of absurd logical premises, or in an exaggeratedly forced anachronism.
+
+\subsection{Genesis of money}
+The business practice, through history, has led to the same traders to find another good for trading another good; and with this good of exchange, using it to trade it for another good; and so on. This leads towards a new question, due to the change of the monetary system: what can it be used as a good of exchange? A quick answer would be gold or silver, two metals considered "precious". But these metals weren't, initially, used as goods of exchange. Niall Ferguson describes this:
+
+\begin{quotation}
+In ancient Mesopotamia, beginning around five thousand years ago, people used clay tokens to record transactions involving agricultural produce like barley or wool, or metals such as silver. Rings, blocks or sheets made of silver certainly served as ready money (as did grain), but the clay tablets were just as important, and probably more so. \cite[p. 27]{ferguson:ascent-money}
+\end{quotation}
+
+Therefore, the author demonstrates that isn't strictly necessary the use of precious metals as a good of exchange. Even if they are, and fulfill with the characteristics mentioned above, notice that the "validation" of silver as money is given through the registry in \textit{clay tablets}. This use of precious metals as money is labeled as \textit{commodity money}.
+
+\subsection{Commodity money}
+Gold, silver, copper or salt\footnote{This is where the etymology of the word "salary" comes from.} were good used as money. This is what it's known as \textit{commodity money}. Is a good that has the same value as both monetary unit and commodity. For example, a piece of gold has its value for being gold; and therefore, it can be served as a good of exchange.
+
+However, precious metals, since the beginning of their use, had a drawback: its quality and purity, and its weight, had to be evaluated in every transaction. Through the search for different solutions, the practice of it appealed to the practice of minting as a method of security and reliability so that, during the exchange, the same coin could give \textit{faith} that it worth what it is.
+
+Regarding the use of gold as a medium of exchange, there is a possible explanation about it that, clearly, the tribes didn't know but, in practice, they took it for granted. Again, reviewing the example of the tribe: given the case in a tribal society, in which they have a certain amount of resources and goods, the local traders decides to go in search of other tribes to trade. If they would have to make a long journey, lasting for days, with a great amount of goods for selling, clearly they'll want to keep entirely all of their goods at full: this includes both goods and the medium of exchange (in other words, the traders will be mostly interested for their goods to not being degraded in the short run). Despite the type of commodity they'll trade, these traders will know that as long as their goods will maintain through time, more chances they'll have to trade it for other goods. It would be useless, for example, to use a medium of exchange that disintegrates after 5 days of their obtainment. If the medium of exchange lasts years, decades or even centuries, everyone who has in their possession this good, will have the security that it won't "spoil" through time; and it will serve for future exchanges, without the necessity of the unnecessary consumption of goods in the short term to "make worth" the money the person had accumulated\footnote{It is under this idea that the absolute importance of the practice of \textit{saving} money is glimpsed. In this example, it's understood that savings are the practice of renouncing the exchange of goods in the short term, for doing it in the long term. This means that, if the medium of exchange allows it, this money could be accumulated in such way that it would not be a necessity of \textit{consuming} goods immediately for the money to not be spoiled (and without loosing the "purchasing power").}
+
+With this premise, therefore, it can conclude that a piece of raw meat, in a location of tropical characteristics, with high temperatures, will have more chances to rot and spoil it in a couple of days, meaning that raw meat cannot be used as a medium of exchange. Maybe wheat grains could spoil more slowly than raw meat; but this won't only serves to make bread but also its accumulation will require of a great maintenance because is an easy target for rodents and bugs. Metals, on the other hand, seems to be the perfect candidates: they don't "rot" in the short term; and by not being food, they will be saved from predators.
+
+Historiography and anthropology, for giving an answer about the life of the primitive man, has classified the ancient history in different ages; and it's no a casual thing to name it with metals (that's why the \textit{metal ages} label). Metallurgy has represented, without any doubt, a huge improvement in the development of new technologies. The discovery of copper, as the first prehistoric metal, not only represented a slow advance towards the adoption of metals as a raw material for the new tools and weapons, but also to others areas of the human activity:
+
+\begin{quotation}
+Progress in trade, along with the development and rise of major cultures during the Bronze Age, turned barter inadequate as a payment system.
+
+This inevitably led to the implementation of a new means of payment based on material that had to have a high and constant value, as well as being corrosion-resistant, easily reproduced, resistant to wear, and recyclable.
+
+Once again copper and its alloys met these conditions, making it possible for different cultures to develop means of payment using copper, bronze and brass. This trend continues to date, with the minting of coins still based on copper alloys. \cite[p. 37]{codelco:copper}
+\end{quotation}
+
+Maybe, the scientific explanation for arriving to the conclusion that gold is the best candidate as a chemical element to preserve it and accumulate it through time, beyond its "visuals" characteristics, would be its huge resistance to corrosion (unlike other materials). The website \textit{Chemistry Explained} writes about gold:
+
+\begin{quotation}
+Generally speaking, gold is not very reactive. It does not combine with oxygen or dissolve in most acids.
+
+[...] These chemical properties also account for some important uses of gold. Gold coins, for example, do not corrode (rust) or tarnish very easily. Neither does jewelry or artwork made of gold. \cite{chemistry:gold}
+\end{quotation}
+
+Again, this was unknown for the tribes through the scientific method. A possible explanation about the adoption of gold could be its high resistance to corrosion, unlike other metals. And this physical characteristic is what it might led people to prefer saving it and using it as a good of exchange, above the rest of the metals\footnote{In other words, maybe this could be a valid explanation about why people started to save and trade with gold, because having it saved, without the fear of believing it can be "spoiled" in the short term (and, by consequence, losing the purchasing power of other goods) would result in a enormous benefit in the long term.}. This doesn't mean every other metal would been discarded right away: here, merchants, basing on their business practices, would see the different goods of exchange in such way that they would classify them under a \textit{value scale}. This implies that some metal would be more \textit{valuable} than others: in this case, gold would be considered with the highest value; while the other metals would be appreciated with an inferior value of gold\footnote{Keep in mind that this process took \textit{millennia}. It wasn't a short term process, but business practices were done through thousands and thousands of years.}. And with this idea of a "value scale" it would be validated by the magnitude of transactions executed: maybe a great quantity of cattle would be sold with gold, while a simple carved stone could be sold with copper.
+
+On the other hand, creating a \textit{value scale} for the different metals will make, for example, the valuation of a good by a specific quantity of copper could be easily converted in a much smaller quantity of gold. This signifies that, e.g., for every 100 copper coins it can be exchanged for 1 gold coin. Thus, the conversion of magnitudes of values of 1 gold coin to 100 copper coins would represent, also, another advantage when paying, because the merchant will have only 1 gold coin, and this means an easier way to saving it and exchange it than having 100 copper coins (in other words, it would be easier to "put in the wallet" a single gold coin rather than 100 copper coins).
+
+Finally, when the State is created, is here when the State takes part of the minting of gold coins, giving it a predetermined shape, with a specific size and purity. And so, the State takes the responsibility of the administration and regulation of money in the society.
+
+\subsection{Fiduciary money}
+As mention above, Ferguson talked about the use of clay tablets. This object has no value \textit{per se}, this means, clay is not a good that has a \textit{value} such that it is accepted as a means of payment. However, what represents that clay tablet (what is \textit{in representation of...}) is what it gives its value. Here, it can be seen, from another perspective, this vague idea of the "value" of goods.
+
+What does it mean the word "fiduciary"? It comes from the word \textit{fiducia}, that means:
+
+\begin{quotation}
+[...] a pact of good faith among two parties in which one of them is obliged to transmit the property of a good or asset to the other.
+
+In the scope of roman law, \textit{fiducia} meant trust, and it was incorporated to the actual commercial law as a contract of word or honor. All of it, through the trust deposit of a party over another. \cite{epedia:fiducia}
+\end{quotation}
+
+In the book \textit{Economía} by Francisco Mochón and Víctor Alberto Beker, the fiduciary money is defined, also as \textit{sign} money, and:
+
+\begin{quote}
+It's a good that worths very little as a commodity, but it maintains its value as a medium of exchange because those who uses it have faith that the Issuer will answer for it. \cite[p. 265]{mochobeker}
+\end{quote}
+
+Fiduciary money, therefore, solves in the first instance the problem of carrying a high weight in metallic coins for making big transactions (beyond the value scale of the different metals). Reviewing the example of the tribe, if the merchants would have to exchange huge amounts of goods, they would need to carry with them a big amount of metallic coins. This would imply a heavier weight, apart from the goods to trade, which this translates into bigger resources used for transport.
+
+If coins were minted with a diameter of an inch (2,54 centimeters) and $ \frac{5}{64} $ inches tall (or 2 millimeters), keeping in mind the different density of materials, the result would be that every coin, according to the type of metal used, will have a different weight. If it takes into account that the density of tin is $ 7,365 kg/m^3 $; copper, $ 8,960 kg/m^3 $; and gold, $ 19,300 kg/m^3 $, calculating the volume of each coin will be:
+
+\begin{align*}
+\text{Volume} &= \pi \cdot radio^{2} \cdot height \\
+\text{Volume} &= \pi \cdot \left( \dfrac{0.0254m}{2} \right)^{2} \cdot 0.002m \\
+\text{Volume} &= \pi \cdot 0.00016129m^{2} \cdot 0.002m \\
+\text{Volume} & \approx 1.013415 \times 10^{-6} m^{3} \\
+\end{align*}
+
+If the volume of this coin is multiplied by the density of each metal, the results will be:
+
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline 
+\textbf{Metal} & \textbf{Density} & \textbf{Weight of coin} \\ 
+\hline 
+\textbf{Tin} & 7,365 $ kg/m^{3} $ & 7.46 grams \\ 
+\hline 
+\textbf{Copper} & 8,960 $ kg/m^{3} $ & 9.08 grams \\ 
+\hline 
+\textbf{Gold} & 19,300 $ kg/m^{3} $ & 19.56 grams \\ 
+\hline 
+\end{tabular} 
+\end{center}
+
+This means that a coin of one inch in diameter and a height of $ \frac{5}{64} $ inches, it will have a weight of 7.46 grams (or 0.26 ounces) if it were tin; 9.08 grams (or 0.32 ounces) if it were copper; and 19.56 grams (or 0.69 ounces) if it were gold. This will imply that if traders must carry 100 coins of each metal, they will have to carry out a total weight of 3.61 kilograms (or 7.959 pounds) in coins. Given the case in which the tribe must need to trade good for the equivalent of 100 gold coins, with a convertibility of 100 copper coins to 1 gold coin, if they only posses copper coins, they will have to have an availability of 10,000 coins, which equals to a weight of 74.64 kilograms (or 164.6 pounds). This means, despite the conversion of "value", it's not practical the business practice in a big scale with commodity money based on metals.
+
+Payment certificates, nevertheless, works in a completely different way: it can be loaded several of them, written in a paper with a meaningless weight, with a value such that it can be equal to the value of gold, copper, tin, etcetera. Therefore, it can be delivered a single paper for the same value as 10,000 copper coins, and replace the 74.64 kilograms (or 164.6 pounds) of metal.
+
+In this sense, in the Middle Age is where the "paper" money is being used as a medium of exchange, alongside of commodity money (but, still, without fully replacing it). Consequently, the paper certificates\footnote{Colloquially speaking in Argentina, it said to be a "painted paper", which contains information about the value of it; and it's a document in which people, at the moment of trading, \textit{trust} in the "value" that is written on that paper.} are backed up by gold or silver deposit of the same value. Here, it begins to see the use of paper certificates as a more \textit{practical} good, in terms of "comfort" to trade, whether is being used for a small scale or big scale trade. People, on their own, seeing the advantages of the \textit{portability} of fiduciary money, they began to choose paper certificates than the commodity itself (although today it's still used metal coins for some low-scale economic transactions), in which they adopted until nowadays.
+
+\subsection{Gold standard}
+When the economic agents decides to \textit{trust} in the paper certificate as the medium of exchange, in replacement of metallic coins, is when it produces a \textit{convertibility}: a paper certificate, with a specific amount, represents such quantity in metallic pieces. In other words, a person or entity who posses an X amount of backed up gold, can issue a paper certificate equal to the value of those gold deposit.
+
+Returning to the example of Anna the baker, and John the glass-bottle maker, if John had in his possession 100 gold coins, and wants to personally buy a chocolate cake to Anna for the value of 2 gold coins, if John doesn't have those 2 gold coins in his pocket, he could issue a paper certificate for the value of 2 gold coins to Anna, as a payment method for that cake.
+
+It's important to mention that here, in order for the economic exchange to be performed, Anna will must \textit{trust} in the certificated issued by John: this means she must trust that John have in his possession that specific amount of gold; and his certificate could be verifiable by John himself to proof the authenticity of the certificate (and demonstrate is not a false certificate).
+
+In conclusion, the paper certificate, although solves the problem of \textit{portability} of commodity money, brings the problem of \textit{trusting} the other party. This doesn't mean that with commodity money didn't exist such problem: while becoming a precious good, scammers started to file the borders of gold coins to take away its weight\footnote{This is the reason why coins has a "saw-tooth" border as a measure of security, proving its integrity.}; and, at one point, achieved the sufficient amount of "dust gold" to melt in in gold pieces (or minting smaller coins). At the same time, people with a "novice eye" could be scammed with pyrite (iron sulfide in its mineral form):
+
+\begin{quotation}
+Pyrite received that nickname [Fool's gold] because it is worth virtually nothing, but has an appearance that "fools" people into believing that it is gold. With a little practice, there are many easy tests that anyone can use to quickly tell the difference between pyrite and gold.
+
+The nickname "fool's gold" has long been used by gold buyers and prospectors, who were amused by excited people who thought they had found gold. These people did not know how to tell the difference between pyrite and gold, and their ignorance caused them to look foolish. \cite{iron-sulfide}
+\end{quotation}
+
+With the paper certificate, it happens the following problem: maybe one could receive one of them with a high denomination; but at the moment of exchanging it for commodity money, the owner of that certificate could not have that exact amount of metal in the precise moment of exchange (or maybe that person never had it in the first place). This would clearly be a scam for the certificate holder. How can the holder of the paper certificate proves that the quantity written can be convertible in metal; and, also, can really \textit{trust} about its existence?
+
+With this apparent "trust crisis", in which both sellers and buyers desired to have a \textit{reliable} paper certificate to make commercial transaction, without the necessity, for example, of walking in public spaces with a great amount of coins in their pockets, had emerged persons and organization dedicated to satisfy such necessity: the \textit{banks} (called that way because, during the Italian renaissance time, the people who asked for a loan to the wealth families they were doing such contract in the plaza's seats\footnote{Both italian and spanish term is "Banca" and "Banco", respectively; and that's where the etymology comes from (and its derivation up to the word "Bank").}\footnote{One of the most famous bankers during the Renaissance era was Giovanni di Bicci de Medici, who founded the Bank of Medici, being the most famous and prestigious bank of the 15th century in Florence.}). These are financial entities that carry out different functions with money, such as: administrating money (make sure that circulating money is reliable); loan money to its clients (in exchange of a fee in the form of \textit{interest}); being an intermediary between economic agents (also called "third party"); being the physical store of money (offering safety box for the storage of money in a safe place); among other things.
+
+In this way, people could issue and receive paper certificates with a bank seal, making sure that in case of any eventuality, these financial entities will be the "trusted third party" to intermediate a commercial exchange. In other word, both buyers and sellers \textit{trust} in this external agent (a third party), the bank, as an entity who assures the reliability of the data and the medium itself; and being the holder of that amount in metal.
+
+Francisco Mochón and Víctor Alberto Beker formally writes about this:
+
+\begin{quotation}
+The \textit{full content paper money}, this means, paper certificates backed up by gold or silver deposits for the same value as the issued certificates, had its origin in the activity developed by the Middle Age goldsmiths. They had safety box in which they save their belongings, and they were progressively offered to the public as a custodial service for precious metals and other valuables.
+
+The service was based on the trust that deserves the goldsmith, who simply extended a receipt promising to return the depositor his belongings at his requirement. The trusted amount to the goldsmith for safekeeping was called \textit{deposit}.
+
+When the holders of the deposit made a major transaction, they could withdraw their deposited goods through the delivery of a receipt, or transferring directly a receipt with fees to the deposited goods.
+
+Over time, these receipts were issued to the bearer, and the purchase and sales were left by the simple delivery of the paper that certificated the private debt recognized by a goldsmith, in which they promised to deliver a certain amount of gold to the bearer when he would ask for it. And so, the \textit{paper money} was fully convertible in gold. \cite[p. 265]{mochobeker}
+\end{quotation}
+
+The business practice of the use of paper certificate had made people, progressively, stop claiming money in its metal form: the \textit{reliable} medium of exchange began to be paper certificates; and the precious metals progressively started to be, only, a "store of value"
+
+As time passed by, the consolidation of the State's power in its territory was such that completely integrated to the financial system, with the creation of the entity called Central Bank; moving forwards to the so called \textit{gold standard}. Although the regulation of the economy existed since the very foundation of the State, which the most ancient example was «the Code of Hammurabi, the first of the great written law codes, [that] imposed a rigid system of controls over wages and prices» \cite[p. 11]{fortycenturies}, the formalization of the whole modern economic system administration was done with the Central Bank. From an historic point of view, this began to happen after the discovery of America, by the hand of europeans, and the necessity of regulating the public arks in a world where its economies were growing. The culminating point was at the end of the 19th century, when the international commerce was entrenched through the whole world.
+
+The economist Gregory Mankiw writes about the control of money and Central Banks:
+
+\begin{quotation}
+The quantity of money available in an economy is called the money supply. In a system of commodity money, the money supply is simply the quantity of that commodity.
+
+[...] In the United States and many other countries, monetary policy is delegated to a partially independent institution called the central bank. The central bank of the United States is the Federal Reserve —often called the Fed. [...] The primary way in which the Fed controls the supply of money is through open-market operations —the purchase and sale of government bonds. \cite[pp. 83-84]{mankiw:macroeconomics}
+\end{quotation}
+
+Thus, the \textit{gold standard} is defined very simply by Olivier Blanchard in the glossary of his book \textit{Macroeconomics}:
+
+\begin{quote}
+A system in which each country fixed the price of its currency in terms of gold and stood ready to exchange gold for currency at the stated parity. \cite[p. 415]{blanchard:macroeconomics}
+\end{quote}
+
+In other words, the \textit{gold standard} was a monetary system based in the established equivalence \textit{by lay} between a currency and a fixed amount of gold of a particular quality.
+
+Gregory Mankiw explains about it:
+
+\begin{quotation}
+During the late nineteenth and early twentieth centuries, most of the world’s major economies operated under the gold standard. Each country maintained a reserve of gold and agreed to exchange one unit of its currency for a specified amount of gold. Through the gold standard, the world’s economies maintained a system of fixed exchange rates.
+
+Thus, [...] the international transport of gold [...] was an automatic mechanism adjusting the money supply and stabilizing exchange rates. This system did not completely fix exchange rates, because shipping gold across the Atlantic was costly. Yet the international gold standard did keep the exchange rate within a range dictated by transportation costs. It thereby prevented large and persistent movements in exchange rates. \cite[pp. 351-352]{mankiw:macroeconomics}
+\end{quotation}
+
+Ludwig von Mises also writes about \textit{gold standard}:
+
+\begin{quotation}
+What economic calculation requires is a monetary system whose functioning is not sabotaged by government interference. The endeavors to expand the quantity of money in circulation [...] disintegrate all currency matters and derange economic calculation.
+
+[...] For the sake of economic calculation all that is needed is to avoid great and abrupt fluctuations in the supply of money. Gold and, [...] silver served very well all the purposes of economic calculation. Changes in the relation between the supply of and the demand for the precious metals and the resulting alterations in purchasing power went on so slowly that the entrepreneur's economic calculation could disregard them without going too far afield. 
+
+[...] The idea of rendering purchasing power stable did not originate from endeavors to make economic calculation more correct. Its source is the wish to create a sphere withdrawn from the ceaseless flux of human affairs.	\cite[pp. 225-226]{mises:ha}
+\end{quotation}
+
+Even Ferguson mentions that:
+
+\begin{quotation}
+The gold standard had its advantages, no doubt. Exchange rate stability made for predictable pricing in trade and reduced transaction costs, while the long-run stability of prices acted as an anchor for inflation expectations. Being on gold may also have reduced the costs of borrowing by committing governments to pursue prudent fiscal and monetary policies. \cite[pp. 58]{ferguson:ascent-money}
+\end{quotation}
+
+In conclusion, the practice of "saving in gold" for, then, emit paper certificates with an equivalent value of such savings, was indeed a big advantage. This practice, through the centuries (with the rise of the State power, and the growth of international commerce) ended up in what later was called \textit{gold standard}, formalized in the end of the 19th century. Thus, acting like intermediates, the States took the role of \textit{private} banks to create Central Banks, and administrating the circulating money of each territory, with their own denomination\footnote{In the next chapter, it will be mentioned about the specific functions of Central Banks.}.
+
+However, the world's financial system isn't exactly the same as the end of 19th centuty. Susan Minushkin, as a review of Barry Eichengreen's \textit{Globalizing Capital: A History of the International Monetary System} book, from the year 1996, mentions briefly about the different "periods":
+
+
+
+\begin{quotation}
+The book divides the history of IMS [International monetary system] in four periods: the classic gold standard (1873-1913), the interwar period (1919-1939), the Bretton Woods era (1945-1971), and the post-Bretton Woods era (1971 to date). The international capital mobility presented several changes through these stages. During the period of classic gold standard the governments fixes their national currencies to gold and they didn't allow restrictions on international capital movements . The non-existent restriction of capital flux acted as a source of stability for the IMS. \cite[pág. 275]{susan-capital}
+\end{quotation}
+
+The gold standard, as time passed by, through the 20th century, began to suffer some macroeconomic and political instabilities, moving forwards to the system known as \textit{fiat} money.
+
+\bibliographystyle{apacite}
+
+\bibliography{biblio.bib}
+
+\end{document}
