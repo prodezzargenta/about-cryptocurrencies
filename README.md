@@ -19,6 +19,11 @@ Capítulo | Título
 11 | Anexo: Tabla de datos
 12 | Referencias
 
+## Conceptos para agregar en la segunda edición
+
+* Glosario de términos.
+* El caso de Canadá y el congelamiento de las cuentas bancarias de los disidentes.
+
 ## Licencia
 
 _Sobre las criptomonedas: una aproximación al dinero del siglo XXI_ por Federico Zabatta se distribuye bajo una Licencia [Creative Commons Atribución 4.0 Internacional](https://creativecommons.org/licenses/by/4.0/deed.es).
